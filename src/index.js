@@ -3,8 +3,8 @@ import * as Sentry from "@sentry/node";
 import errorHandler from "../src/middleware/errorHandler.js";
 import log from './middleware/logMiddleware.js';
 import usersRouter from './routes/users.js';
-import usersProperties from './routes/properties.js';
-import usersAmenities from './routes/amenities.js';
+import propertiesRouter from './routes/properties.js';
+import amenitiesRouter from './routes/amenities.js';
 
 
 const app = express();
@@ -34,8 +34,8 @@ app.use(express.json());
 
 // app.use('/login', loginRouter);
 app.use('/users', usersRouter);
-app.use('/properties', usersProperties);
-app.use('/amenities', usersAmenities);
+app.use('/properties', propertiesRouter);
+app.use('/amenities', amenitiesRouter);
 
 app.use(log);
 
