@@ -22,5 +22,37 @@ model User {
   email          String
   phoneNumber    String
   profilePicture String?
-  // Booking        Booking[]
+}
+
+model Property {
+  id              String  @id @default(uuid())
+  title           String
+  description     String
+  location        String
+  pricePerNight   Float          
+  bedroomCount    Int
+  bathRoomCount   Int
+  maxGuestCount   Int
+  hostId          String
+  rating          Float
+  amenities       Amenity[]
+  PropertyAmenity PropertyAmenity[]
+}
+
+
+model Amenity {
+  id              String  @id @default(uuid())
+  name            String
+  Property        Property[]
+  PropertyAmenity PropertyAmenity[]
+}
+
+model PropertyAmenity {
+  propertyId String
+  amenityId  String
+  Property   Property @relation(fields: [propertyId], references: [id])
+  Amenity    Amenity  @relation(fields: [amenityId], references: [id])
+
+  @@id([propertyId, amenityId])
+  @@index([amenityId])
 }

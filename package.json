@@ -5,13 +5,15 @@
   "description": "Your REST API for managing bookings",
   "main": "src/index.js",
   "prisma": {
-    "seed": "node ./prisma/seed.js"
+    "seed": "node src/prisma/seed.js",
+    "schema": "src/prisma/schema.prisma"
   },
   "scripts": {
     "dev": "nodemon src/index.js",
     "test-positive": "newman run \"./postman/collections/Bookings API.json\" -e \"./postman/environments/Local.postman_environment.json\"",
     "test-negative": "newman run \"./postman/collections/Bookings API Negative.json\" -e \"./postman/environments/Local.postman_environment.json\"",
-    "test": "npm run test-positive && npm run test-negative"
+    "test": "npm run test-positive && npm run test-negative",
+    "prisma": "prisma generate --schema prisma/schema.prisma"
   },
   "author": "Rhomekso Azwar",
   "license": "ISC",
