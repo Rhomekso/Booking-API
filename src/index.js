@@ -7,6 +7,9 @@ import log from './middleware/logMiddleware.js';
 import usersRouter from './routes/users.js';
 import propertiesRouter from './routes/properties.js';
 import amenitiesRouter from './routes/amenities.js';
+import bookingsRouter from './routes/bookings.js';
+import hostsRouter from './routes/hosts.js';
+import reviewsRouter from './routes/reviews.js';
 
 
 const app = express();
@@ -39,6 +42,9 @@ app.use('/users', usersRouter);
 app.use('/properties', propertiesRouter);
 app.use('/amenities', amenitiesRouter);
 app.use('/login', loginRouter);
+app.use('/bookings', bookingsRouter);
+app.use('/hosts', hostsRouter);
+app.use('/reviews', reviewsRouter);
 
 app.use(log);
 

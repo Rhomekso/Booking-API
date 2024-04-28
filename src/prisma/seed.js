@@ -2,6 +2,9 @@ import { PrismaClient } from '@prisma/client'
 import usersData from '../data/users.json' assert { type: "json" }
 import propertiesData from '../data/properties.json' assert { type: "json" }
 import amenitiesData from '../data/amenities.json' assert { type: "json" }
+import hostsData from '../data/hosts.json' assert { type: "json" }
+import bookingsData from '../data/bookings.json' assert { type: "json" }
+import reviewsData from '../data/reviews.json' assert { type: "json" }
 
 const prisma = new PrismaClient({ log: ['query', 'info', 'warn', 'error'] })
 
@@ -9,6 +12,9 @@ async function main() {
     const { users } = usersData
     const { properties } = propertiesData
     const { amenities } = amenitiesData
+    const { hosts } = hostsData
+    const { bookings } = bookingsData
+    const { reviews } = reviewsData
 
     try {
         //seed users
@@ -35,6 +41,33 @@ async function main() {
                 where: { id: amenity.id },
                 update: {},
                 create: amenity,
+            })
+        }
+
+        //seed hosts
+        for (const host of hosts) {
+            await prisma.host.upsert({
+                where: { id: host.id },
+                update: {},
+                create: host,
+            })
+        }
+
+        //seed bookings
+        for (const booking of bookings) {
+            await prisma.booking.upsert({
+                where: { id: booking.id },
+                update: {},
+                create: booking,
+            })
+        }
+
+        //seed reviews
+        for (const review of reviews) {
+            await prisma.review.upsert({
+                where: { id: review.id },
+                update: {},
+                create: review,
             })
         }
 
