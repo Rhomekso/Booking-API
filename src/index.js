@@ -1,6 +1,8 @@
 import express from "express";
 import * as Sentry from "@sentry/node";
+import 'dotenv/config';
 import errorHandler from "../src/middleware/errorHandler.js";
+import loginRouter from './routes/login.js';
 import log from './middleware/logMiddleware.js';
 import usersRouter from './routes/users.js';
 import propertiesRouter from './routes/properties.js';
@@ -36,6 +38,7 @@ app.use(express.json());
 app.use('/users', usersRouter);
 app.use('/properties', propertiesRouter);
 app.use('/amenities', amenitiesRouter);
+app.use('/login', loginRouter);
 
 app.use(log);
 
