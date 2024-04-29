@@ -1,8 +1,8 @@
 import { auth } from 'express-oauth2-jwt-bearer';
 
 const authMiddleware = auth({
-    audience: 'https://my_booking_app',
-    issuerBaseURL: `https://dev-qba48wbjjco1tcit.eu.auth0.com/`,
+    audience: 'bookings-api',
+    issuerBaseURL: 'https://dev-g4i3az4f1vb3pzp4.us.auth0.com/',
     tokenSigningAlg: 'RS256'
 });
 
