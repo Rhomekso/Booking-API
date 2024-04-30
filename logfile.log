@@ -18,3 +18,9 @@
 {"level":"info","message":"GET /properties. Status: 200. Duration: 11 ms","service":"booking_app"}
 {"level":"info","message":"GET /userss. Status: 200. Duration: 0 ms","service":"booking_app"}
 {"level":"info","message":"POST /. Status: 200. Duration: 1 ms","service":"booking_app"}
+{"level":"info","message":"PUT /amenities. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"POST /bookings/f0123456-78ab-cdef-0123-456789abcdef. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"PUT /bookings. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"GET /hosts/d3456789-01cd-def0-1234-56789abcdef0. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"GET /host/d3456789-01cd-def0-1234-56789abcdef0. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"PUT /hosts. Status: 200. Duration: 1 ms","service":"booking_app"}
