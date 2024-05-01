@@ -10,6 +10,8 @@ import removeAmenityById from '../services/amenities/removeAmenityById.js';
 
 const router = express.Router()
 
+
+// get all amenities
 router.get('/', async (req, res) => {
     try {
         const { name } = req.query;
@@ -22,6 +24,8 @@ router.get('/', async (req, res) => {
     }
 });
 
+
+// get amenity by id
 router.get('/:id', async (req, res, next) => {
     try {
         const { id } = req.params
@@ -33,6 +37,8 @@ router.get('/:id', async (req, res, next) => {
     }
 }, notFoundErrorHandler);
 
+
+// create/post amenity
 router.post('/', auth, async (req, res) => {
     try {
         const { name } = req.body;
@@ -48,6 +54,8 @@ router.post('/', auth, async (req, res) => {
     }
 });
 
+
+// update/put amenity by id
 router.put('/:id', auth, async (req, res) => {
     const { id } = req.params;
     const { name } = req.body;
@@ -67,6 +75,8 @@ router.put('/:id', auth, async (req, res) => {
     }
 });
 
+
+// delete amenity by id
 router.delete('/:id', auth, async (req, res) => {
     const { id } = req.params;
     const amenity = await removeAmenityById(id);
