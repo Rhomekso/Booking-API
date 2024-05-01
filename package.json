@@ -5,7 +5,7 @@
   "description": "Your REST API for managing bookings",
   "main": "src/index.js",
   "prisma": {
-    "seed": "node src/prisma/seed.js",
+    "seed": "node prisma/seed.js",
     "schema": "src/prisma/schema.prisma"
   },
   "scripts": {
