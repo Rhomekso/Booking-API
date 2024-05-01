@@ -28,3 +28,7 @@
 {"level":"info","message":"POST /reviews/k1234567-89f0-1234-5678-9abcdef01234. Status: 200. Duration: 0 ms","service":"booking_app"}
 {"level":"info","message":"PUT /reviews. Status: 200. Duration: 0 ms","service":"booking_app"}
 {"level":"info","message":"GET /. Status: 200. Duration: 6 ms","service":"booking_app"}
+{"level":"info","message":"GET /bookings?userId=a1234567-89ab-cdef-0123-456789abcdef. Status: 200. Duration: 2 ms","service":"booking_app"}
+{"level":"info","message":"GET /bookings?userId=a1234567-89ab-cdef-0123-456789abcdef. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"GET /bookings?userId=a1234567-89ab-cdef-0123-456789abcdef. Status: 200. Duration: 0 ms","service":"booking_app"}
+{"level":"info","message":"GET /bookings?userId=a1234567-89ab-cdef-0123-456789abcdef. Status: 200. Duration: 1 ms","service":"booking_app"}

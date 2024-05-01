@@ -15,8 +15,10 @@ const router = express.Router();
 router.get('/', async (req, res) => {
     try {
         const { userId, propertyId } = req.query;
-
         const bookings = await getBookings(userId, propertyId);
+        console.log(`first test = ${JSON.stringify(bookings)}`)
+        console.log(`second test = ${userId}`)
+        console.log(`third test = ${JSON.stringify(propertyId)}`)
         res.status(200).json(bookings);
     } catch (error) {
         console.error(error);
