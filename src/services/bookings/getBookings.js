@@ -4,11 +4,16 @@ import { PrismaClient } from "@prisma/client";
 const getBookings = async (id) => {
     const prisma = new PrismaClient();
 
-    return prisma.booking.findMany({
+    const gevondenMetPrisma = await prisma.booking.findMany({
         where: {
-            id
+            userId: {
+				contains: id
+			}
         }
     });
+	// console.log("gevondenMetPrisma:",gevondenMetPrisma)
+	return gevondenMetPrisma
 }
+
 
 export default getBookings;
