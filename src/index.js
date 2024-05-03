@@ -46,6 +46,8 @@ app.use('/bookings', bookingsRouter);
 app.use('/hosts', hostsRouter);
 app.use('/reviews', reviewsRouter);
 
+app.use(errorHandler);
+
 app.use(log);
 
 app.get("/", (req, res) => {
