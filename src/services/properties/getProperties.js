@@ -11,7 +11,7 @@ const getProperties = async (id) => {
 			}
         }
     });
-	console.log("foundWithPrisma:",foundWithPrisma)
+	// console.log("foundWithPrisma:",foundWithPrisma)
 	return foundWithPrisma
 }
 
