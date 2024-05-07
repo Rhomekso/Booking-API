@@ -59,8 +59,8 @@ model PropertyAmenity {
   Property   Property               @relation(fields: [propertyId], references: [id])
   Amenity    Amenity                @relation(fields: [amenityId], references: [id])
 
-  @@id([propertyId, amenityId])
-  @@index([amenityId])
+  @@index([propertyId])
+  @@id([amenityId])
 }
 
 model Host {
